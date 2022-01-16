@@ -1,6 +1,6 @@
 # Wisteria Palette
-![preview](/imgs/colors.png)
 a color palette based on flowers !
+![preview](/imgs/colors.png)
 
 # Palette
 ### Background
