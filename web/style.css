@@ -23,7 +23,11 @@
     top: 10px;
     left: 10px;
 
+    font-size: 16px;
+
     transition: opacity .3s;
+
+    text-decoration: none;
 }
 
 .hidden {
@@ -36,9 +40,26 @@
 
     font-family: 'Poppins', sans-serif;
 
-    font-size: 16px;
+    font-size: 21px;
 
     font-weight: bold;
+
+    cursor: pointer;
+
+    user-select: none;
+}
+
+.text:hover {
+    text-decoration: underline;
+}
+
+.background {
+    width: 100vw;
+    height: 100vh;
+
+    background-color: var(--background-primary);
+
+    z-index: -100;
 }
 
 .background-label {
@@ -47,55 +68,50 @@
     left: 10px;
 
     color: var(--background-primary);
-    /*
-    background-color: var(--background-secondary);
-    padding: 10px 20px 10px 20px;
-    border-radius: 1000px;
-    */
+    
+    transition: text-shadow .2s;
 
-    text-shadow: 2px 2px var(--background-secondary);
+    text-shadow: 0px 0px;
 
     font-size: 32px;
 }
 
 .background-secondary-label {
     color: var(--background-secondary);
-
-    padding: 3px;
 }
 
 .foreground-primary-label {
     color: var(--foreground-primary);
 
+    /*
     position: fixed;
     top: 10px;
-    right: 10px;
+    right: 10px;*/
 }
 
 .foreground-secondary-label {
     color: var(--foreground-secondary);
-
+/*
     position: fixed;
-    top: 35px;
-    right: 10px;
+    top: 40px;
+    right: 10px;*/
 }
 
 .center {
-    width: 100vw;
-    height: 100vh;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
-    background-color: var(--background-primary);
 }
 
-#info {
-    padding: 10px;
-
-    transition: opacity .3s;
+.background:hover > .background-label {
+    cursor: pointer;
+    text-shadow: 2px 2px var(--background-secondary);
 }
 
 .palette {
@@ -130,6 +146,8 @@
     justify-content: center;
 
     cursor: pointer;
+
+    text-decoration: none !important;
 }
 
 .palette-color:hover {

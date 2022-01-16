@@ -1,34 +1,28 @@
-var infoText = document.getElementById("info")
 var clipboardNoti = document.getElementById("clipboard-notification")
-
-var selectedPaletteColor;
+var clipboardReset;
 
 // on start
 var paletteColors = document.getElementsByClassName("palette-color")
 for(var i = 0; i < paletteColors.length; i++) {
     paletteColors[i].key = i
     paletteColors[i].onclick = (e) => {
-        var colorID = e.target.classList[1];
-
-        var number = colorID[6]
-        var color = getComputedStyle(document.documentElement).getPropertyValue(`--${colorID}`)
-        
-        infoText.textContent = `Color ${number}`
-
-        if(selectedPaletteColor != undefined)
-            selectedPaletteColor.classList.remove("palette-color-selected")
-        e.target.classList.add("palette-color-selected");
-        selectedPaletteColor = e.target;
-
-        Copy(color)
+        Copy(`--${e.target.classList[1]}`)
     }
 }
 
 function Copy(color) {
-    navigator.clipboard.writeText(color)
+    var hex = getComputedStyle(document.documentElement).getPropertyValue(color)
 
-    clipboardNoti.textContent = `Copied ${color} to Clipboard!`;
-    clipboardNoti.classList.remove("hidden");
+    navigator.clipboard.writeText(hex)
+
+    clipboardNoti.innerHTML = `Copied <span style="color: ${hex};${color == "--background-primary" ? "text-shadow: 1px 1px var(--background-secondary);" : ""}">${hex}</span> to Clipboard!`;
+    clipboardNoti.classList.remove("hidden")
+
+    if(clipboardReset) {
+        clearInterval(clipboardReset)
+    }
+
+    clipboardReset = setInterval(() => {
+        clipboardNoti.classList.add("hidden")
+    }, 3000)
 }
-
-console.log(getComputedStyle(document.documentElement).getPropertyValue("--color-1"))
