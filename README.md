@@ -1,0 +1,19 @@
+# Wisteria Palette
+a color palette based on flowers !
+
+# Palette
+### Background
+background primary: #3d3c3d
+background secondary: #5a575a
+
+### Foreground
+foreground primary: #cec7cf
+foreground secondary: #9c989a
+
+### Main Colors
+color 1: #9d7fa5
+color 2: #969e81
+color 3: #c079a0
+color 4: #7b6fbd
+color 5: #ca95b2
+color 6: #a79a87

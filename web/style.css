@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap');
+
+:root {
+    --background-primary: #3d3c3d;
+    --background-secondary: #5a575a;
+    --foreground-primary: #cec7cf;
+    --foreground-secondary: #9c989a;
+    --color-1: #9d7fa5;
+    --color-2: #969e81;
+    --color-3: #c079a0;
+    --color-4: #7b6fbd;
+    --color-5: #ca95b2;
+    --color-6: #a79a87;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#clipboard-notification {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+
+    transition: opacity .3s;
+}
+
+.hidden {
+    opacity: 0;
+    user-select: none;
+}
+
+.text {
+    color: var(--foreground-primary);
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 16px;
+
+    font-weight: bold;
+}
+
+.background-label {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+
+    color: var(--background-primary);
+    /*
+    background-color: var(--background-secondary);
+    padding: 10px 20px 10px 20px;
+    border-radius: 1000px;
+    */
+
+    text-shadow: 2px 2px var(--background-secondary);
+
+    font-size: 32px;
+}
+
+.background-secondary-label {
+    color: var(--background-secondary);
+
+    padding: 3px;
+}
+
+.foreground-primary-label {
+    color: var(--foreground-primary);
+
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
+.foreground-secondary-label {
+    color: var(--foreground-secondary);
+
+    position: fixed;
+    top: 35px;
+    right: 10px;
+}
+
+.center {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    background-color: var(--background-primary);
+}
+
+#info {
+    padding: 10px;
+
+    transition: opacity .3s;
+}
+
+.palette {
+    width: 360px;
+    height: 75px;
+    
+    border-radius: 1000px;
+
+    background-color: var(--background-secondary);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.palette-color {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 1000px;
+
+    outline-color: var(--foreground-primary);
+    outline-style: solid;
+    outline-width: 0px;
+
+    transition: outline-width .1s;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+.palette-color:hover {
+    outline-width: 5px;
+}
+
+.palette-color-selected {
+    outline-width: 5px;
+}
+
+.color-1 {
+    background-color: var(--color-1);
+}
+.color-2 {
+    background-color: var(--color-2);
+}
+.color-3 {
+    background-color: var(--color-3);
+}
+.color-4 {
+    background-color: var(--color-4);
+}
+.color-5 {
+    background-color: var(--color-5);
+}
+.color-6 {
+    background-color: var(--color-6);
+}
